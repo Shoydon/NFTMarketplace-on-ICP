@@ -9,3 +9,14 @@
     background-color: rgba(128, 0, 128, 0.857); /* background color */
     border-color: rgba(128, 0, 128, 0.857); /* border color */
 }
+
+.btn-voilet {
+    color: #fff; /* text color */
+    background-color: rgba(77, 0, 128, 0.857); /* background color */
+    border-color: rgba(77, 0, 128, 0.857); /* border color */
+}
+.btn-voilet:hover {
+    color: #fff; /* text color */
+    background-color: rgba(77, 0, 128, 0.814); /* background color */
+    border-color: rgba(77, 0, 128, 0.814); /* border color */
+}

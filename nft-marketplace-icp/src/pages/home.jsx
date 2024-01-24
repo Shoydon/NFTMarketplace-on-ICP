@@ -8,7 +8,7 @@ function Home({ nfts, addToCart, removeFromCart }) {
 
   return (
     <div className='home'>
-      {nfts.map((nft, index) => (
+      {nfts.map((nft, index) => !nft.isSold && (
         <NFTCard nft={nft} addToCart={addToCart} removeFromCart={removeFromCart} index={index}/>
       ))}
     </div>

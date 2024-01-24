@@ -5,8 +5,12 @@ import Web3 from 'web3';
 import { NavLink } from 'react-router-dom';
 import { useState , useEffect } from 'react';
 import '../styles/navbar.css'
+
 import { FaShoppingCart } from "react-icons/fa";
 import { FaWallet } from "react-icons/fa";
+import { CiUser } from "react-icons/ci";
+import { LiaUserTieSolid } from "react-icons/lia";
+
 
 
 const Navbar = ({ cart, totalAmount, setTotalAmount, handlePayment, setCart, setNfts, removeFromCart }) => {
@@ -76,11 +80,13 @@ const Navbar = ({ cart, totalAmount, setTotalAmount, handlePayment, setCart, set
                     {/* <div id="connect-button">
                         <button class="btn btn-primary m-2" type="button" onClick={connectWallet}>Connect wallet</button>
                     </div> */}
-                    { !connected && <button class="btn btn-primary m-2" type="button" onClick={connectWallet}>Connect wallet <FaWallet/>
-</button>}
+                    { !connected && <button class="btn btn-primary m-2" type="button" onClick={connectWallet}>Connect wallet <FaWallet/></button>}
                     <button class="btn btn-purple m-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Shopping Cart<FaShoppingCart style={{width:"30px"}}/></button>
                     <NavLink to={"/mint"}>
                         <button class="btn btn-info m-2" type="button">Mint NFT</button>
+                    </NavLink>
+                    <NavLink to={"/profile"}>
+                        <button class="btn btn-voilet m-2" type="button">Profile  <LiaUserTieSolid /></button>
                     </NavLink>
                 </form>
             </div>
@@ -92,7 +98,7 @@ const Navbar = ({ cart, totalAmount, setTotalAmount, handlePayment, setCart, set
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <p className='text-body-secondary'>Total Amount: {totalAmount} wei</p>
+                    <p className='text-body-secondary'>Total Amount: {totalAmount} BFT</p>
                     <button onClick={handlePayment} className='btn btn-primary m-2'>Proceed to Payment</button>
                     <button onClick={handleClearCart} className='btn btn-danger m-2'>Clear cart</button>
                         <hr></hr>
@@ -103,16 +109,6 @@ const Navbar = ({ cart, totalAmount, setTotalAmount, handlePayment, setCart, set
                             )
                         ))}
                     </div>                    
-                    <hr></hr>
-
-                    {/* <div className="past-trxns">
-                        <h3>Past Transactions</h3>
-                        {
-                            pastTrxns.map((txn) => {
-                                return (<Transaction key={txn.trxnHash} trxnHash={txn.trxnHash} />)
-                            })
-                        }
-                    </div> */}
                 </div>
             </div>
         </nav>
