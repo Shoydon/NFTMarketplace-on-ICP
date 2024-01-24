@@ -82,7 +82,7 @@ function App() {
   return (
     <div className="App" style={{ backgroundImage: `url(${background})` }}>
       <BrowserRouter>
-        <Navbar cart={cart} totalAmount={totalAmount} setTotalAmount={setTotalAmount} setCart={setCart} setNfts={setNfts} handlePayment={handlePayment}/>
+        <Navbar cart={cart} totalAmount={totalAmount} setTotalAmount={setTotalAmount} setCart={setCart} setNfts={setNfts} handlePayment={handlePayment} removeFromCart={removeFromCart}/>
         <Routes>
           <Route index element={<Home nfts={nfts} addToCart={addToCart} removeFromCart={removeFromCart}/>} />
           <Route path="/mint" element={<MintNFT />} />

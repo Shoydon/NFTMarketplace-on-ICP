@@ -31,14 +31,14 @@ const Navbar = ({ cart, totalAmount, setTotalAmount, handlePayment, setCart, set
           }
     }
 
-    // const handleClearCart = () => {
-    //     for(let i = 0; i < cart.length; i++){
-    //         // setNfts((prevNfts) => prevNfts.filter((item) => item.isAdded === false));
-    //         removeFromCart(cart[i], cart[i].index)
-    //     }
-    //     setCart([]);
-    //     setTotalAmount(0);
-    // }
+    const handleClearCart = () => {
+        for(let i = 0; i < cart.length; i++){
+            cart[i].isAdded = false;
+            removeFromCart(cart[i], cart[i].index)
+        }
+        setCart([]);
+        setTotalAmount(0);
+    }
 
     useEffect(() => {
         handleChangeAccount();
@@ -94,7 +94,7 @@ const Navbar = ({ cart, totalAmount, setTotalAmount, handlePayment, setCart, set
                 <div class="offcanvas-body">
                     <p className='text-body-secondary'>Total Amount: {totalAmount} wei</p>
                     <button onClick={handlePayment} className='btn btn-primary m-2'>Proceed to Payment</button>
-                    {/* <button onClick={handleClearCart} className='btn btn-danger m-2'>Clear cart</button> */}
+                    <button onClick={handleClearCart} className='btn btn-danger m-2'>Clear cart</button>
                         <hr></hr>
                     <div className="cart-list">
                         <h3>Cart items</h3>
