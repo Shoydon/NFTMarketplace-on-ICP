@@ -16,10 +16,14 @@ function MyNFTCard({ nft }) {
         //         <p class="card-text">{nft.description}</p>
         //     </div>
         // </div>
-        <div class="card my-card" style={{ width: "250px", height:"250px" }}>
-            <img src={(`../nft-images/${nft.id}.jpg`)} class="card-img-top card-img" alt={nft.id} />
+        <div class="card my-card m-3" style={{ width: "250px", height:"250px" }}>
+            {/* <img src={(`../nft-images/${nft.id}.jpg`)} class="card-img-top card-img" alt={nft.id} /> */}
+            <div className="card-img">
+                <img src={require(`../nft-images/cryptopunk0.jpg`)} class="card-img-top card-img" alt={nft.id} />
+            </div>
             <div class="card-body my-card-body">
                 <p class="card-text">{nft.description}</p>
+                <p class="card-text">hello</p>
             </div>
         </div>
     )
